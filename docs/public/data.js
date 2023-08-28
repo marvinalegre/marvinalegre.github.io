@@ -94,6 +94,7 @@ let projectsData = [
       'postgresql',
       'express',
       'node',
+      'd3'
     ],
   },
 ]
