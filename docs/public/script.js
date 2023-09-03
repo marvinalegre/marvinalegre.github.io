@@ -7,6 +7,7 @@ let navStuffButton = document.createElement('a')
 let navProjButton = document.createElement('a')
 let navAboutButton = document.createElement('a')
 let turtle = document.createElement('div')
+let avatar = document.createElement('img')
 let hr = document.createElement('hr')
 let title = document.getElementById('title')
 
@@ -45,10 +46,15 @@ let buildNavbar = (nav) => {
 let buildTurtle = (turtle) => {
   turtle.setAttribute('id', 'turtle')
 }
+let buildAvatar = (avatar) => {
+  avatar.setAttribute('id', 'avatar')
+  avatar.setAttribute('src', 'public/avatar.png')
+}
 
 buildDisplay(display)
 buildNavbar(navbar)
 buildTurtle(turtle)
+buildAvatar(avatar)
 
 if (window.location.pathname === '/projects') {
   title.textContent = 'Projects | Marvin Alegre'
@@ -193,6 +199,16 @@ if (window.location.pathname === '/projects') {
 
   document.querySelector('#stuff-btn').setAttribute('class', 'active')
 
+  let figure = document.createElement('figure')
+  let figcap = document.createElement('figcaption')
+  figcap.textContent = 'An almost perfect crop by a machine learning model. \
+  But the thing is, almost perfect is good enough. Amazing stuff!'
+  figure.appendChild(avatar)
+  figure.appendChild(figcap)
+
+  display.appendChild(figure)
+
+  display.appendChild(hr)
   display.appendChild(turtle)
 
 } else {
