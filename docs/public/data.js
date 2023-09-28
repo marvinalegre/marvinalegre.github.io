@@ -13,6 +13,13 @@ let projectsData = [
     repo: "https://github.com/marvinalegre/degreeprograms.site",
     tags: ["nest", "mongodb", "node", "typescript", "chartjs"],
   },
+  {
+    projectName: "contacts.net",
+    description: "Access your contacts anywhere, anytime.",
+    url: "https://marvinalegre.github.io/notfound",
+    repo: "https://github.com/marvinalegre/contacts.net",
+    tags: ["postgresql", "express", "react", "node"],
+  },
 ];
 
 let techLinks = {
