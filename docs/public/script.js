@@ -1,230 +1,232 @@
-shuffle(projectsData)
+shuffle(projectsData);
 
-let body = document.body
-let display = document.createElement('div')
-let navbar = document.createElement('nav')
-let navStuffButton = document.createElement('a')
-let navProjButton = document.createElement('a')
-let navAboutButton = document.createElement('a')
-let turtle = document.createElement('div')
-let avatar = document.createElement('img')
-let hr = document.createElement('hr')
-let title = document.getElementById('title')
+let body = document.body;
+let display = document.createElement("div");
+let navbar = document.createElement("nav");
+let navStuffButton = document.createElement("a");
+let navProjButton = document.createElement("a");
+let navAboutButton = document.createElement("a");
+let turtle = document.createElement("div");
+let avatar = document.createElement("img");
+let hr = document.createElement("hr");
+let title = document.getElementById("title");
 
 let buildDisplay = (pd) => {
-  pd.setAttribute('id', 'display')
-}
+  pd.setAttribute("id", "display");
+};
 let buildNavbar = (nav) => {
-  navStuffButton.setAttribute('href', '/stuff')
-  navStuffButton.setAttribute('tabindex', 3)
-  navStuffButton.setAttribute('id', 'stuff-btn')
-  navStuffButton.textContent = 'STUFF'
-  nav.appendChild(navStuffButton)
+  navStuffButton.setAttribute("href", "/stuff");
+  navStuffButton.setAttribute("tabindex", 3);
+  navStuffButton.setAttribute("id", "stuff-btn");
+  navStuffButton.textContent = "STUFF";
+  nav.appendChild(navStuffButton);
 
-  navProjButton.setAttribute('href', '/projects')
-  navProjButton.setAttribute('tabindex', 2)
-  navProjButton.setAttribute('id', 'projects-btn')
-  navProjButton.textContent = 'PROJECTS'
-  nav.appendChild(navProjButton)
+  navProjButton.setAttribute("href", "/projects");
+  navProjButton.setAttribute("tabindex", 2);
+  navProjButton.setAttribute("id", "projects-btn");
+  navProjButton.textContent = "PROJECTS";
+  nav.appendChild(navProjButton);
 
-  navAboutButton.setAttribute('href', '/')
-  navAboutButton.setAttribute('tabindex', 1)
-  navAboutButton.setAttribute('id', 'about-btn')
-  navAboutButton.textContent = 'ABOUT'
-  nav.appendChild(navAboutButton)
+  navAboutButton.setAttribute("href", "/");
+  navAboutButton.setAttribute("tabindex", 1);
+  navAboutButton.setAttribute("id", "about-btn");
+  navAboutButton.textContent = "ABOUT";
+  nav.appendChild(navAboutButton);
 
-  let icon = document.createElement('i')
-  icon.setAttribute('class', 'fa fa-caret-down')
+  let icon = document.createElement("i");
+  icon.setAttribute("class", "fa fa-caret-down");
 
-  let dropDown = document.createElement('a')
-  dropDown.setAttribute('href', 'javascript:void(0)')
-  dropDown.setAttribute('class', 'icon')
-  dropDown.setAttribute('onclick', 'showPages()')
-  dropDown.appendChild(icon)
-  nav.appendChild(dropDown)
-}
+  let dropDown = document.createElement("a");
+  dropDown.setAttribute("href", "javascript:void(0)");
+  dropDown.setAttribute("class", "icon");
+  dropDown.setAttribute("onclick", "showPages()");
+  dropDown.appendChild(icon);
+  nav.appendChild(dropDown);
+};
 let buildTurtle = (turtle) => {
-  turtle.setAttribute('id', 'turtle')
-}
+  turtle.setAttribute("id", "turtle");
+};
 let buildAvatar = (avatar) => {
-  avatar.setAttribute('id', 'avatar')
-  avatar.setAttribute('src', 'public/avatar.png')
-}
+  avatar.setAttribute("id", "avatar");
+  avatar.setAttribute("src", "public/avatar.png");
+};
 
-buildDisplay(display)
-buildNavbar(navbar)
-buildTurtle(turtle)
-buildAvatar(avatar)
+buildDisplay(display);
+buildNavbar(navbar);
+buildTurtle(turtle);
+buildAvatar(avatar);
 
-if (window.location.pathname === '/projects') {
-  title.textContent = 'Projects | Marvin Alegre'
-  body.appendChild(navbar)
-  body.appendChild(display)
+if (window.location.pathname === "/projects") {
+  title.textContent = "Projects | Marvin Alegre";
+  body.appendChild(navbar);
+  body.appendChild(display);
 
-  document.querySelector('#projects-btn').setAttribute('class', 'active')
+  document.querySelector("#projects-btn").setAttribute("class", "active");
 
-  let tagsCount = {}
+  let tagsCount = {};
   for (let project of projectsData) {
     for (let tag of project.tags) {
       if (tagsCount[tag]) {
-        tagsCount[tag]++
+        tagsCount[tag]++;
       } else {
-        tagsCount[tag] = 1
+        tagsCount[tag] = 1;
       }
     }
   }
 
-  let tagsCountSorted = []
+  let tagsCountSorted = [];
   for (let tag in tagsCount) {
-    let pair = []
-    pair.push(tag)
-    pair.push(tagsCount[tag])
-    tagsCountSorted.push(pair)
+    let pair = [];
+    pair.push(tag);
+    pair.push(tagsCount[tag]);
+    tagsCountSorted.push(pair);
   }
-  tagsCountSorted.sort((a, b) => b[1] - a[1])
+  tagsCountSorted.sort((a, b) => b[1] - a[1]);
 
   // build filters
-  let filterButtons = document.createElement('div')
-  filterButtons.setAttribute('class', 'filters')
+  let filterButtons = document.createElement("div");
+  filterButtons.setAttribute("class", "filters");
   for (let tag of tagsCountSorted) {
-    let filter = document.createElement('button')
-    filter.setAttribute('id', tag[0])
-    filter.setAttribute('class', 'filter')
-    filter.textContent = tag[0] + ' ' + tag[1]
+    let filter = document.createElement("button");
+    filter.setAttribute("id", tag[0]);
+    filter.setAttribute("class", "filter");
+    filter.textContent = tag[0] + " " + tag[1];
 
-    filterButtons.appendChild(filter)
+    filterButtons.appendChild(filter);
   }
-  display.appendChild(filterButtons)
+  display.appendChild(filterButtons);
 
   // build initial project list
-  let projects = document.createElement('div')
-  projects.setAttribute('id', 'projects')
+  let projects = document.createElement("div");
+  projects.setAttribute("id", "projects");
   for (let project of projectsData) {
-    let projectCard = document.createElement('div')
-    projectCard.setAttribute('class', 'project')
+    let projectCard = document.createElement("div");
+    projectCard.setAttribute("class", "project");
 
-    let name = document.createElement('h3')
-    name.textContent = project.projectName
-    projectCard.appendChild(name)
+    let a = document.createElement("a");
+    a.setAttribute("href", project.url);
+    let name = document.createElement("h3");
+    name.textContent = project.projectName;
+    a.appendChild(name);
+    projectCard.appendChild(a);
 
-    let description = document.createElement('p')
-    description.textContent = project.description
-    projectCard.appendChild(description)
+    let description = document.createElement("p");
+    description.textContent = project.description;
+    projectCard.appendChild(description);
 
-    let repo = document.createElement('a')
-    let githubIcon = document.createElement('i')
-    githubIcon.setAttribute('class', 'fa fa-brand fa-github')
-    repo.appendChild(githubIcon)
-    repo.setAttribute('href', project.repo)
-    repo.setAttribute('class', 'project-link')
-    projectCard.appendChild(repo)
+    let repo = document.createElement("a");
+    let githubIcon = document.createElement("i");
+    githubIcon.setAttribute("class", "fa fa-brand fa-github");
+    repo.appendChild(githubIcon);
+    repo.setAttribute("href", project.repo);
+    repo.setAttribute("class", "project-link");
+    projectCard.appendChild(repo);
 
-    let url = document.createElement('a')
-    let urlIcon = document.createElement('i')
-    urlIcon.setAttribute('class', 'fa-solid fa-link')
-    url.appendChild(urlIcon)
-    url.setAttribute('href', project.url)
-    url.setAttribute('class', 'project-link')
-    projectCard.appendChild(url)
+    // let url = document.createElement('a')
+    // let urlIcon = document.createElement('i')
+    // urlIcon.setAttribute('class', 'fa-solid fa-link')
+    // url.appendChild(urlIcon)
+    // url.setAttribute('href', project.url)
+    // url.setAttribute('class', 'project-link')
+    // projectCard.appendChild(url)
 
-    let ul = document.createElement('ul')
-    ul.setAttribute('class', 'tags')
+    let ul = document.createElement("ul");
+    ul.setAttribute("class", "tags");
     for (let tag of project.tags) {
-      let li = document.createElement('li')
-      let a = document.createElement('a')
-      a.textContent = tag
-      a.setAttribute('href', techLinks[tag])
-      li.appendChild(a)
-      ul.appendChild(li)
+      let li = document.createElement("li");
+      let a = document.createElement("a");
+      a.textContent = tag;
+      a.setAttribute("href", techLinks[tag]);
+      li.appendChild(a);
+      ul.appendChild(li);
     }
-    projectCard.appendChild(ul)
+    projectCard.appendChild(ul);
 
-    projects.appendChild(projectCard)
+    projects.appendChild(projectCard);
   }
-  display.appendChild(projects)
+  display.appendChild(projects);
 
-  let filters = []
-  let buttons = document.getElementsByClassName('filter')
+  let filters = [];
+  let buttons = document.getElementsByClassName("filter");
   for (let button of buttons) {
-    button.addEventListener('click', (e) => {
-      if (!filters.includes(button.getAttribute('id'))) {
-        button.setAttribute('style', 'background-color: yellow;')
-        filters.push(button.getAttribute('id'))
+    button.addEventListener("click", (e) => {
+      if (!filters.includes(button.getAttribute("id"))) {
+        button.setAttribute("style", "background-color: yellow;");
+        filters.push(button.getAttribute("id"));
       } else {
-        button.setAttribute('style', 'background-color: #e9e9ed;')
-        let count = 0
+        button.setAttribute("style", "background-color: #e9e9ed;");
+        let count = 0;
         for (let tag of filters) {
-          if (tag === e.target.getAttribute('id')) {
-            filters.splice(count, 1)
-            break
+          if (tag === e.target.getAttribute("id")) {
+            filters.splice(count, 1);
+            break;
           }
-          count++
+          count++;
         }
       }
 
-      let projects = document.getElementsByClassName('project')
+      let projects = document.getElementsByClassName("project");
       for (let project of projects) {
-        let tags
+        let tags;
         for (let node of project.childNodes) {
-          if (node.className === 'tags') {
-            tags = node
+          if (node.className === "tags") {
+            tags = node;
           }
         }
 
-        let count = 0
+        let count = 0;
         for (let filter of filters) {
           for (let li of tags.childNodes) {
             if (li.textContent === filter) {
-              count++
+              count++;
             }
           }
         }
 
         if (count === filters.length) {
-          project.style.display = ''
+          project.style.display = "";
         } else {
-          project.style.display = 'none'
+          project.style.display = "none";
         }
       }
-    })
+    });
   }
 
-  display.appendChild(hr)
-  display.appendChild(turtle)
+  display.appendChild(hr);
+  display.appendChild(turtle);
+} else if (window.location.pathname === "/stuff") {
+  title.textContent = "Projects | Marvin Alegre";
+  body.appendChild(navbar);
+  body.appendChild(display);
 
-} else if (window.location.pathname === '/stuff') {
-  title.textContent = 'Projects | Marvin Alegre'
-  body.appendChild(navbar)
-  body.appendChild(display)
+  document.querySelector("#stuff-btn").setAttribute("class", "active");
 
-  document.querySelector('#stuff-btn').setAttribute('class', 'active')
+  let figure = document.createElement("figure");
+  let figcap = document.createElement("figcaption");
+  figcap.textContent =
+    "An almost perfect crop by a machine learning model. \
+  But the thing is, almost perfect is good enough. Amazing stuff!";
+  figure.appendChild(avatar);
+  figure.appendChild(figcap);
 
-  let figure = document.createElement('figure')
-  let figcap = document.createElement('figcaption')
-  figcap.textContent = 'An almost perfect crop by a machine learning model. \
-  But the thing is, almost perfect is good enough. Amazing stuff!'
-  figure.appendChild(avatar)
-  figure.appendChild(figcap)
+  display.appendChild(figure);
 
-  display.appendChild(figure)
-
-  display.appendChild(hr)
-  display.appendChild(turtle)
-
+  display.appendChild(hr);
+  display.appendChild(turtle);
 } else {
-  let main = document.createElement('main')
-  let error = document.createElement('p')
-  error.textContent = 'Not Found'
-  main.appendChild(error)
+  let main = document.createElement("main");
+  let error = document.createElement("p");
+  error.textContent = "Not Found";
+  main.appendChild(error);
 
-  title.textContent = '404 | Marvin Alegre'
-  body.appendChild(navbar)
-  body.appendChild(display)
-  display.appendChild(main)
-  display.appendChild(hr)
-  display.appendChild(turtle)
+  title.textContent = "404 | Marvin Alegre";
+  body.appendChild(navbar);
+  body.appendChild(display);
+  display.appendChild(main);
+  display.appendChild(hr);
+  display.appendChild(turtle);
 
-  document.getElementById('about-btn').style.backgroundColor = '#333'
+  document.getElementById("about-btn").style.backgroundColor = "#333";
 }
 
 function showPages() {
@@ -238,18 +240,20 @@ function showPages() {
 
 // copied this function from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
+  let currentIndex = array.length,
+    randomIndex;
 
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
-
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 
   return array;

@@ -99,6 +99,10 @@ h3 {
   padding: 4px;
 }
 
+.project a {
+  text-decoration: none;
+}
+
 .filters {
   max-width: 400px;
   padding: 6px;
