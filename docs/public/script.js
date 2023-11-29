@@ -195,7 +195,7 @@ if (window.location.pathname === "/projects") {
   display.appendChild(hr);
   display.appendChild(turtle);
 } else if (window.location.pathname === "/stuff") {
-  title.textContent = "Projects | Marvin Alegre";
+  title.textContent = "Stuff | Marvin Alegre";
   body.appendChild(navbar);
   body.appendChild(display);
 
