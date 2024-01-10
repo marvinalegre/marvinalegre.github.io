@@ -14,11 +14,11 @@ let projectsData = [
     tags: ["nest", "mongodb", "node", "typescript", "chartjs"],
   },
   {
-    projectName: "contacts.net",
-    description: "Access your contacts anywhere, anytime.",
-    url: "https://marvinalegre.github.io/notfound",
-    repo: "https://github.com/marvinalegre/contacts.net",
-    tags: ["postgresql", "express", "react", "node"],
+    projectName: "CSC Job Portal",
+    description: "Just another csc job portal",
+    url: "https://cscjobportal.pages.dev/",
+    repo: "https://github.com/marvinalegre/cscjobportal",
+    tags: ["react"],
   },
 ];
 
