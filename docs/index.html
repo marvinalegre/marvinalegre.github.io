@@ -1,70 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvin Alegre</title>
+    <style>
+      body {
+        margin: 10px auto;
+        max-width: 1000px;
+        background-color: #e4e4e4;
+        font-family: serif;
+        font-size: 20px;
+      }
 
-<head>
-  <title>About | Marvin Alegre</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="public/style.css">
-  <script src="https://kit.fontawesome.com/e7209d63e4.js" crossorigin="anonymous"></script>
-</head>
+      .square {
+        border: 3px solid #103f1d;
+        width: 65px;
+        height: 65px;
+        background-color: #7bad18;
+        margin: 16px;
+      }
 
-<body>
-  <nav>
-    <a id="stuff-btn" href="/stuff" tabindex="3">STUFF</a>
-    <a id="projects-btn" href="/projects" tabindex="2">PROJECTS</a>
-    <a id="about-btn" class="active" href="/" tabindex="1">ABOUT</a>
-    <a href="javascript:void(0)" class="icon" onclick="showPages()">
-      <i class="fa fa-caret-down"></i>
-    </a>
-  </nav>
+      nav {
+        background-color: #333;
+        display: inline-block;
+        width: 100%;
+      }
 
-  <main>
-    <p>Hello world. I am Marvin Alegre and welcome to my corner of the web.</p>
+      .last-update {
+        float: right;
+        display: inline-block;
+        background-color: #333;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
 
-    <p>
-      These days, I spend most of my time reading programming textbooks
-      (<a href="https://www.amazon.com/Code-Complete-Developer-Best-Practices-ebook/dp/B00JDMPOSY?ref_=ast_author_mpb">current
-      favorite</a>), tech docs, blogs (like <a href="https://www.rogerschank.com/">this</a> and
-      <a href="https://www.schneier.com/">this</a>),
-      <a href="https://news.ycombinator.com/">etc.</a> and writing with a code editor.
-    </p>
+      main {
+        max-width: 700px;
+        padding: 10px;
+        margin: 0 auto;
+      }
 
-    <p>Here is a list of some of my online profiles:</p>
+      main a {
+        color: black;
+      }
 
-    <ul>
-      <li><a href="https://www.kaggle.com/marvinalegre" target="_blank">kaggle</a></li>
-      <li><a href="https://github.com/marvinalegre" target="_blank">github</a></li>
-      <li><a href="https://www.freecodecamp.org/marvinalegre" target="_blank">freecodecamp</a></li>
-      <li><a href="https://www.codecademy.com/profiles/marvinalegre" target="_blank">codecademy</a></li>
-      <li><a href="https://projecteuler.net/profile/marvinalegre.png" target="_blank">project euler</a></li>
-      <li><a href="https://leetcode.com/marvinalegre/" target="_blank">leetcode</a></li>
-      <li><a href="https://play.picoctf.org/users/marvinalegre" target="_blank">picoctf</a></li>
-      <li><a href="https://archive.ooo/u/marvinalegre" target="_blank" referrerpolicy="no-referrer">ooo archive</a></li>
-      <li><a href="https://www.hackthissite.org/user/view/marvinalegre" target="_blank" referrerpolicy="no-referrer">hackthissite</a></li>
-      <li><a href="https://www.duolingo.com/profile/marvinalegre" target="_blank">duolingo</a></li>
-      <li><a href="https://www.chess.com/member/marvinalegre" target="_blank">chess.com</a></li>
-      <li><a href="https://monkeytype.com/profile/marvinalegre" target="_blank">monkeytype</a></li>
-      <li><a href="https://news.ycombinator.com/user?id=marvinalegre" target="_blank">hacker news</a></li>
-      <li><a href="https://mastodon.social/@marvinalegre" rel="me">mastodon</a></li>
-    </ul>
+      main a:focus {
+        outline: 3px solid #7bad18;
+        /* background-color: white; */
+      }
 
-    <p>You are welcome to contact me anytime about anything. Here is my email address: <a
-        href="mailto:marvinalegre@skiff.com">marvinalegre@skiff.com</a>.</p>
+      blockquote p::before {
+        content: "\201C";
+      }
 
-    <p>Have a great life!</p>
+      blockquote p::after {
+        content: "\201D";
+      }
 
-    <hr>
+      @media screen and (max-width: 600px) {
+        body {
+          margin: 0;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="last-update">2024-02-08</div>
+    </nav>
+    <main>
+      <p>Hi. I am Marvin Alegre.</p>
 
-    <p style="padding: 10px;">"Extraordinary claims require extraordinary evidence."</p>
-    <p style="padding: 10px; margin-top: -30px;">- Carl Sagan</p>
+      <p>
+        These days, I spend most of my time reading programming textbooks
+        (<a href="https://www.amazon.com/Code-Complete-Developer-Best-Practices-ebook/dp/B00JDMPOSY?ref_=ast_author_mpb" target="_blank">current favorite</a>),
+        manuals,
+        <a href="https://arxiv.org/abs/2401.16212" target="_blank">research papers</a>,
+        <a href="https://edcom2.gov.ph/publications/" target="_blank">reports</a>,
+        blogs (like
+        <a href="https://www.rogerschank.com/" target="_blank">this</a> and
+        <a href="https://www.schneier.com/" target="_blank">this</a>),
+        <a href="https://news.ycombinator.com/" target="_blank">etc</a> and writing with a code
+        editor.
+      </p>
 
-    <hr>
+      <p>Here is a list of some of my online profiles:</p>
 
-    <div id="turtle"></div>
-  </main>
+      <ul>
+        <li>
+          <a href="https://www.kaggle.com/marvinalegre" target="_blank">
+            kaggle
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/marvinalegre" target="_blank"> github </a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/marvinalegre" target="_blank">
+            freecodecamp
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.codecademy.com/profiles/marvinalegre"
+            target="_blank"
+          >
+            codecademy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://projecteuler.net/profile/marvinalegre.png"
+            target="_blank"
+          >
+            project euler
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/marvinalegre/" target="_blank">
+            leetcode
+          </a>
+        </li>
+        <li>
+          <a href="https://play.picoctf.org/users/marvinalegre" target="_blank">
+            picoctf
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://archive.ooo/u/marvinalegre"
+            target="_blank"
+            referrerpolicy="no-referrer"
+          >
+            ooo archive
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.hackthissite.org/user/view/marvinalegre"
+            target="_blank"
+            referrerpolicy="no-referrer"
+          >
+            hackthissite
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.duolingo.com/profile/marvinalegre"
+            target="_blank"
+          >
+            duolingo
+          </a>
+        </li>
+        <li>
+          <a href="https://www.chess.com/member/marvinalegre" target="_blank">
+            chess.com
+          </a>
+        </li>
+        <li>
+          <a href="https://monkeytype.com/profile/marvinalegre" target="_blank">
+            monkeytype
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://news.ycombinator.com/user?id=marvinalegre"
+            target="_blank"
+          >
+            hacker news
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://mastodon.social/@marvinalegre"
+            target="_blank"
+            rel="me"
+          >
+            mastodon
+          </a>
+        </li>
+      </ul>
 
-  <script src="public/script.js"></script>
-</body>
+      <p>
+        You are welcome to contact me anytime about anything. Here is my email
+        address:
+        <a href="mailto:marvinalegre@skiff.com">marvinalegre@skiff.com</a>.
+      </p>
 
+      <p>Have a great life!</p>
+
+      <hr />
+
+      <blockquote>
+        <p>Extraordinary claims require extraordinary evidence.</p>
+        <footer>—Carl Sagan</footer>
+      </blockquote>
+
+      <hr />
+
+      <div class="square" />
+    </main>
+  </body>
 </html>
