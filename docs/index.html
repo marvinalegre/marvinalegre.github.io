@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marvin Alegre</title>
     <style>
+      :root {
+        box-sizing: border-box;
+        background-color: #f3f3f3;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
       body {
-        margin: 10px auto;
+        margin: 20px auto;
         max-width: 1000px;
         background-color: #e4e4e4;
         font-family: serif;
@@ -27,9 +38,13 @@
         width: 100%;
       }
 
+      li {
+        line-height: 1.5rem;
+      }
+
       .last-update {
         float: right;
-        display: inline-block;
+        display: block;
         background-color: #333;
         color: white;
         padding: 14px 16px;
@@ -37,8 +52,9 @@
       }
 
       main {
+        background-color: #e4e4e4;
         max-width: 700px;
-        padding: 10px;
+        padding: 10px 10px 20px 10px;
         margin: 0 auto;
       }
 
@@ -50,12 +66,8 @@
         outline: 3px solid #333;
       }
 
-      blockquote p::before {
-        content: "\201C";
-      }
-
-      blockquote p::after {
-        content: "\201D";
+      hr {
+        margin: 1.6rem 0;
       }
 
       @media screen and (max-width: 600px) {
@@ -63,33 +75,38 @@
           margin: 0;
           font-size: 18px;
         }
+
+        main {
+          padding: 0 1rem;
+        }
+
+        blockquote {
+          margin: 0 20px;
+        }
+
+        li {
+          line-height: normal;
+        }
       }
     </style>
   </head>
   <body>
     <nav>
-      <div class="last-update">2024-10-08</div>
+      <div class="last-update">2024-12-14</div>
     </nav>
     <main>
       <p>Hi. I am Marvin Alegre.</p>
 
       <p>
-        These days, I spend most of my time reading programming textbooks
-        (<a href="https://www.amazon.com/Code-Complete-Developer-Best-Practices-ebook/dp/B00JDMPOSY?ref_=ast_author_mpb" target="_blank">current favorite</a>),
-        manuals,
-        <a href="https://arxiv.org/abs/2401.16212" target="_blank">research papers</a>,
-        <a href="https://edcom2.gov.ph/publications/" target="_blank">reports</a>,
-        <a href="https://mlcommons.org/benchmarks/" target="_blank">benchmarks</a>,
-        blogs (like
-        <a href="https://www.rogerschank.com/" target="_blank">this</a> and
-        <a href="https://www.schneier.com/" target="_blank">this</a>),
-        <a href="https://news.ycombinator.com/" target="_blank">etc</a> and writing with a code
-        editor.
+        These days, I spend most of my time building secure web applications.
       </p>
 
       <p>Here is a list of some of my online profiles:</p>
 
       <ul>
+        <li>
+          <a href="https://github.com/marvinalegre" target="_blank"> github </a>
+        </li>
         <li>
           <a
             href="https://pokemath.pages.dev/marvinalegre"
@@ -100,46 +117,8 @@
           </a>
         </li>
         <li>
-          <a
-            href="https://mastodon.social/@marvinalegre"
-            target="_blank"
-            rel="me"
-          >
-            mastodon
-          </a>
-        </li>
-        <li>
-          <a href="https://www.kaggle.com/marvinalegre" target="_blank">
-            kaggle
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/marvinalegre" target="_blank"> github </a>
-        </li>
-        <li>
           <a href="https://www.freecodecamp.org/marvinalegre" target="_blank">
             freecodecamp
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.codecademy.com/profiles/marvinalegre"
-            target="_blank"
-          >
-            codecademy
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://projecteuler.net/profile/marvinalegre.png"
-            target="_blank"
-          >
-            project euler
-          </a>
-        </li>
-        <li>
-          <a href="https://leetcode.com/marvinalegre/" target="_blank">
-            leetcode
           </a>
         </li>
         <li>
@@ -163,6 +142,32 @@
             referrerpolicy="no-referrer"
           >
             hackthissite
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kaggle.com/marvinalegre" target="_blank">
+            kaggle
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.codecademy.com/profiles/marvinalegre"
+            target="_blank"
+          >
+            codecademy
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://projecteuler.net/profile/marvinalegre.png"
+            target="_blank"
+          >
+            project euler
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/marvinalegre/" target="_blank">
+            leetcode
           </a>
         </li>
         <li>
@@ -191,12 +196,22 @@
             hacker news
           </a>
         </li>
+        <li>
+          <a
+            href="https://mastodon.social/@marvinalegre"
+            target="_blank"
+            rel="me"
+          >
+            mastodon
+          </a>
+        </li>
       </ul>
 
       <p>
         You are welcome to contact me anytime about anything. Here is my email
         address:
-        <a href="mailto:marvinalegredev@gmail.com">marvinalegredev@gmail.com</a>.
+        <a href="mailto:marvinalegredev@gmail.com">marvinalegredev@gmail.com</a
+        >.
       </p>
 
       <p>Have a great life!</p>
@@ -204,13 +219,13 @@
       <hr />
 
       <blockquote>
-        <p>Extraordinary claims require extraordinary evidence.</p>
+        <p>&quot;Extraordinary claims require extraordinary evidence.&quot;</p>
         <footer>—Carl Sagan</footer>
       </blockquote>
 
       <hr />
 
-      <div class="square" />
+      <div class="square"></div>
     </main>
   </body>
 </html>
