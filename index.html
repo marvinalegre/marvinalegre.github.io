@@ -11,6 +11,11 @@
         -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
         max-width: 100%;
       }
+
+      /* Hide everything after the first five */
+      .collapsed > p:nth-of-type(n + 6) {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -87,119 +92,123 @@
 
     <h2>notes</h2>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a72d80e-774c-83ec-a2e4-bd96ebd783cd"
-        >assessing developer ability</a
-      >
-    </p>
+    <div class="collapsed" id="notes">
+      <p>
+        <a href="https://chatgpt.com/share/6a72d80e-774c-83ec-a2e4-bd96ebd783cd"
+          >assessing developer ability</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a7199a2-50c0-83ec-97ea-d5557ac7e803"
-        >essentials of debian linux</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a7199a2-50c0-83ec-97ea-d5557ac7e803"
+          >essentials of debian linux</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a7179ee-39c0-83ec-b4d3-647e94a63973"
-        >git bisect basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a7179ee-39c0-83ec-b4d3-647e94a63973"
+          >git bisect basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a714a37-45e0-83ec-948a-555e71fe58f7"
-        >pass basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a714a37-45e0-83ec-948a-555e71fe58f7"
+          >pass basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a713db6-cb04-83ec-94e8-37dfc6b65a88"
-        >gpg basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a713db6-cb04-83ec-94e8-37dfc6b65a88"
+          >gpg basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a70212b-1314-83ec-ade2-0ae363b72229"
-        >markdown basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a70212b-1314-83ec-ade2-0ae363b72229"
+          >markdown basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a65c919-7a84-83ec-ae6a-5e60ad2cc1b5"
-        >browser apis basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a65c919-7a84-83ec-ae6a-5e60ad2cc1b5"
+          >browser apis basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a65c1b3-87c0-83ec-82ea-eb49bf5bf601"
-        >shadow dom explained</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a65c1b3-87c0-83ec-82ea-eb49bf5bf601"
+          >shadow dom explained</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a65be30-e554-83ec-9938-e52881440e69"
-        >astro basics guide</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a65be30-e554-83ec-9938-e52881440e69"
+          >astro basics guide</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a65b968-95e0-83ec-83d6-6acd0f4f7c9e"
-        >css grundlagen</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a65b968-95e0-83ec-83d6-6acd0f4f7c9e"
+          >css grundlagen</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a658c42-507c-83ec-8341-911e179e7119"
-        >js import maps basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a658c42-507c-83ec-8341-911e179e7119"
+          >js import maps basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a64b4f8-5818-83ec-b656-ba338a3ad084"
-        >open graph basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a64b4f8-5818-83ec-b656-ba338a3ad084"
+          >open graph basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a635191-03f0-83ec-9204-28937640d5e1"
-        >flex vs grid</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a635191-03f0-83ec-9204-28937640d5e1"
+          >flex vs grid</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a6307ae-a964-83ec-b4c5-4f7c0a5f7162"
-        >flexbox css basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a6307ae-a964-83ec-b4c5-4f7c0a5f7162"
+          >flexbox css basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a5f6fb7-fb58-83ec-9f0e-17a60719e87e"
-        >linux sysadmin basics</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a5f6fb7-fb58-83ec-9f0e-17a60719e87e"
+          >linux sysadmin basics</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a5f6b94-5584-83ec-b286-e682bec1fa5c"
-        >linux primer</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a5f6b94-5584-83ec-b286-e682bec1fa5c"
+          >linux primer</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a5f6438-f048-83ec-aa0a-77eeed2f1ac6"
-        >linux development folders</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a5f6438-f048-83ec-aa0a-77eeed2f1ac6"
+          >linux development folders</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a5f62d5-8eb0-83ec-84d8-5608675f07f1"
-        >linux in web servers</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a5f62d5-8eb0-83ec-84d8-5608675f07f1"
+          >linux in web servers</a
+        >
+      </p>
 
-    <p>
-      <a href="https://chatgpt.com/share/6a5e2f18-080c-83ec-b348-8ce4b9461746"
-        >version control necessity</a
-      >
-    </p>
+      <p>
+        <a href="https://chatgpt.com/share/6a5e2f18-080c-83ec-b348-8ce4b9461746"
+          >version control necessity</a
+        >
+      </p>
+    </div>
+
+    <button id="toggle">See more</button>
 
     <hr />
 
@@ -251,5 +260,19 @@ which               13 | #
     </em>
     <hr />
     <font size="-1">last update: August 5, 2026</font>
+
+    <script>
+      const notes = document.getElementById("notes");
+      const button = document.getElementById("toggle");
+
+      button.addEventListener("click", () => {
+        console.log("hit");
+        notes.classList.toggle("collapsed");
+
+        button.textContent = notes.classList.contains("collapsed")
+          ? "See more"
+          : "See less";
+      });
+    </script>
   </body>
 </html>
